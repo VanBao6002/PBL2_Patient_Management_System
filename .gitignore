@@ -1,0 +1,30 @@
+# Compiled object files
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dll
+*.dylib
+
+# Executable files
+*.exe
+*.out
+*.app
+
+# Qt / CMake build files
+build/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+
+# User-specific files
+*.log
+*.user
+*.DS_Store
+*.swp
+*.vcxproj.*
