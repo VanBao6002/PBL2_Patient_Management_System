@@ -50,3 +50,7 @@ Push code lên GitHub để mọi người review
 Hợp nhất (merge) vào dev khi tính năng ổn định
 
 Chỉ merge từ dev sang main khi hoàn thiện giai đoạn
+
+Trong .h ko dc xai namespace std
+
+Trong .cpp dc xai namespace std
