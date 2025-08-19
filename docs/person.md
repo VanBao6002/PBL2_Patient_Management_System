@@ -1,0 +1,2 @@
+- exception : gender, ID, birthday
+-
