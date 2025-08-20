@@ -9,7 +9,7 @@ void Utils::validateName(const std::string &name_) {
 
 void Utils::validateGender(char gender) {
     if (std::tolower(gender) != 'm' && std::tolower(gender) != 'f'){
-        throw std::invalid_argument("Gioi tinh phai la 'M hoac 'F");
+        throw std::invalid_argument("Invalid gender, must be 'M' or 'F'");
     }
 }
 bool Utils::isLeapYear(int year) {
@@ -18,7 +18,7 @@ bool Utils::isLeapYear(int year) {
 
 void Utils::validateBirthday(const Date &birthday) {
     if (birthday.month < 1 || birthday.month > 12){
-        throw std::invalid_argument("Thang sinh phai tu 1 - 12");
+        throw std::invalid_argument("Invalid month");
     }
 
     int maxDay = 0;
@@ -35,20 +35,20 @@ void Utils::validateBirthday(const Date &birthday) {
             }
             break;
         default:
-            throw std::invalid_argument("Thang sinh khong hop le");
+            throw std::invalid_argument("Invalid month");
     }
 
     if (birthday.day < 1 || birthday.day > maxDay){
-        throw std::invalid_argument("Ngay sinh phai khong hop le");
+        throw std::invalid_argument("Invalid day");
     }
 
     if (birthday.year < 1900 || birthday.year > 2025){
-        throw std::invalid_argument("Nam sinh vuot qua pham vi cho phep");
+        throw std::invalid_argument("Invalid year, out of range");
     }
 }
 
 void Utils::validateID(int ID) {
     if (ID < 0){
-        throw std::invalid_argument("ID phai lon hon 0");
+        throw std::invalid_argument("Invalid ID, ID must be non-negative");
     }
 }
