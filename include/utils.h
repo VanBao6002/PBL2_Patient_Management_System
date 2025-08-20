@@ -7,11 +7,11 @@
 
 class Utils {
 public:
-    static void validateName(const std::string &name);
-    static void validateGender(char gender);
+    static void validName(const std::string &name);
+    static void validGender(char gender);
     static bool isLeapYear(int year);
-    static void validateBirthday(const Date &birthday);
-    static void validateID(int ID);
+    static void validBirthday(const Date &birthday);
+    static void validID(int ID);
 };
 
 #endif 

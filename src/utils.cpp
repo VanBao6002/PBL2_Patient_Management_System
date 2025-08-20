@@ -1,13 +1,13 @@
 #include "utils.h"
 #include <stdexcept>
 
-void Utils::validateName(const std::string &name_) {
+void Utils::validName(const std::string &name_) {
     if (name_.empty()) {
         throw std::invalid_argument("Name cannot be empty");
     }
 }
 
-void Utils::validateGender(char gender) {
+void Utils::validGender(char gender) {
     if (std::tolower(gender) != 'm' && std::tolower(gender) != 'f'){
         throw std::invalid_argument("Invalid gender, must be 'M' or 'F'");
     }
@@ -16,7 +16,7 @@ bool Utils::isLeapYear(int year) {
     return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 }
 
-void Utils::validateBirthday(const Date &birthday) {
+void Utils::validBirthday(const Date &birthday) {
     if (birthday.month < 1 || birthday.month > 12){
         throw std::invalid_argument("Invalid month");
     }
@@ -47,7 +47,7 @@ void Utils::validateBirthday(const Date &birthday) {
     }
 }
 
-void Utils::validateID(int ID) {
+void Utils::validID(int ID) {
     if (ID < 0){
         throw std::invalid_argument("Invalid ID, ID must be non-negative");
     }
