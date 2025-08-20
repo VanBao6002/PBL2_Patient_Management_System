@@ -28,3 +28,6 @@ Makefile
 *.DS_Store
 *.swp
 *.vcxproj.*
+
+# Copilot insturctions
+*.github/*
