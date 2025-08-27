@@ -26,6 +26,8 @@ Xóa bác sĩ.
 
 Liệt kê tất cả bác sĩ.
 
+Kiểm tra thông tin bệnh nhân được bác sĩ đảm nhận
+
 3. Quản lý Lịch hẹn (Appointment)
 
 Đặt lịch hẹn (gồm bệnh nhân + bác sĩ + ngày/giờ + lý do khám).

@@ -52,3 +52,4 @@ void Utils::validID(int ID) {
         throw std::invalid_argument("Invalid ID, ID must be non-negative");
     }
 }
+
