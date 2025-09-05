@@ -15,7 +15,6 @@ Hãy hình dung PMS giống như một phần mềm trợ lý cho bệnh viện/
 
 - Thêm bệnh nhân mới (Mã ID, họ tên, tuổi, giới tính, thông tin liên hệ, tiền sử bệnh…). 
     
-
 - Xem thông tin bệnh nhân theo ID.
 
 - Sửa thông tin bệnh nhân (ví dụ: đổi số điện thoại, địa chỉ).
