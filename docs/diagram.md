@@ -2,7 +2,7 @@
                   │   Person    │  <- Abstract class
                   │─────────────│
                   │ - name      │
-                  │ - age       │
+                  │ - age       |
                   │─────────────│
                   │ +displayInfo() = 0 │
                   └─────────────┘
