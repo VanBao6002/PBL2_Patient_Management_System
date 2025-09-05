@@ -14,7 +14,7 @@ class Person {
         Person();
 
         //parameterized constructor
-        Person(const std::string &name, char gender, const Date &birthday, int ID);
+        Person(const std::string &name_, char gender_, const Date &birthday_, int ID_);
 
         //virtual destructor
         virtual ~Person();
