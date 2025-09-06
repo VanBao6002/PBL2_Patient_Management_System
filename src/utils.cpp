@@ -1,5 +1,8 @@
 #include "utils.h"
 #include <stdexcept>
+#include <unordered_set>
+#include <string>
+#include <ctime>
 
 void Utils::validName(const std::string &name_) {
     if (name_.empty()) {
@@ -17,6 +20,11 @@ bool Utils::isLeapYear(int year) {
 }
 
 void Utils::validBirthday(const Date &birthday) {
+    std::time_t t = std::time(nullptr);
+    std::tm* currentTime = std::localtime(&t);
+    int currentYear = currentTime->tm_year + 1900;
+    int lowerYearLimit = currentYear - 200;
+
     if (birthday.month < 1 || birthday.month > 12){
         throw std::invalid_argument("Invalid month");
     }
@@ -42,7 +50,7 @@ void Utils::validBirthday(const Date &birthday) {
         throw std::invalid_argument("Invalid day");
     }
 
-    if (birthday.year < 1900 || birthday.year > 2025){
+    if (birthday.year < lowerYearLimit || birthday.year > currentYear){
         throw std::invalid_argument("Invalid year, out of range");
     }
 }
@@ -53,3 +61,15 @@ void Utils::validID(int ID) {
     }
 }
 
+void Utils::checkExistPatientID(std::unordered_set<int> patientIDs, int patientID_){
+    if (patientIDs.find(patientID_) == patientIDs.end()){
+        throw std::invalid_argument("patientID: " + std::to_string(patientID_) +  " is not found in doctor's list");
+    }
+}
+
+void Utils::checkExistSpecialization(std::string specialization_){
+    std::unordered_set<std::string> specializationTable = {"Cardiology", "Neurology", "Pediatrics", "Orthopedics"};
+    if (specializationTable.find(specialization_) == specializationTable.end()){
+        throw std::invalid_argument("specializatio: " + specialization_ + " is not found");
+    }
+}
