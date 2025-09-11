@@ -4,23 +4,27 @@
 #include "person.h"
 #include <string>
 #include <vector>
-
+#include <unordered_set>
 class Doctor : public Person {
+    public:
+        enum status { Unavailable, Available, OnLeave };
+
     private:
         std::string specialization; // chuyen khoa
-        std::vector<int> patientIDs; // ID benh nhan duoc bac si dam nhan
+        std::unordered_set<int> patientIDs; // ID benh nhan duoc bac si dam nhan
+        status doctorStatus;
     
     public:
         Doctor();
 
-        Doctor(const std::string &name_, char gender_, const Date &birthday_, int ID_, const std::string specialization_);
+        Doctor(const std::string &name_, char gender_, const Date &birthday_, int ID_, const std::string specialization_, status doctorStatus_);
 
-        ~Doctor();
+        ~Doctor() = default;
 
         void displayInfo() const override;
 
         std::string getSpecialization() const {return specialization;}
-        std::vector<int> getPatientIDs() const {return patientIDs;}
+        const std::unordered_set<int>& getPatientIDs() const {return patientIDs;}
 
         void setSpecialization(const std::string &specialization_);
         void addPatientID(int patientID_);

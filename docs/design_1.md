@@ -10,6 +10,7 @@ Hãy hình dung PMS giống như một phần mềm trợ lý cho bệnh viện/
 - Lớp DoctorManager
 - Lớp Appointment
 - Lớp AppointmentManager
+- Lớp Utils
 
 1. Lớp Person
 - Thuộc tính:
@@ -42,7 +43,14 @@ Hãy hình dung PMS giống như một phần mềm trợ lý cho bệnh viện/
 
 - Liệt kê tất cả bệnh nhân.
 
-3.0 Lớp Doctor
+3.0 Lớp Doctor(Thừa kế từ lớp Person)
+- Thuộc tính:
+    + specialization (chuyên khoa)
+    + patientsID (Vector chứa ID bệnh nhân đảm nhận)
+- Phương thức:
+    + getSpecialization (xuất tên của chuyên khoa)
+    + addPatientID (thêm ID của bệnh nhân vào vector ID bệnh nhân)
+    + removePatientID (xóa ID của bệnh nhân vào vector ID bệnh nhân)
 
 3.1. Lớp DoctorManager
 - Thêm bác sĩ (ID, họ tên, chuyên khoa, lịch trực/khả năng khám).
