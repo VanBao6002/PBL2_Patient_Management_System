@@ -23,6 +23,14 @@ Hãy hình dung PMS giống như một phần mềm trợ lý cho bệnh viện/
     * phương thức trừu tượng displayInfo
 
 2.0 Lớp Patient
+- Thuộc tính:
+    + Kế thừa từ lớp Person;
+    + bloodType, nameMother, nameFather
+- Phương thức:
+    + setter (hàm nhập):
+        + setBloodType, setNameMother, setNameFather
+    + getter (hàm xuất):
+        + getBloodType, getNameMother, getNameFather
 
 2.1. Lớp PatientManager 
 - Thêm bệnh nhân mới (Mã ID, họ tên, tuổi, giới tính, thông tin liên hệ, tiền sử bệnh…). 
