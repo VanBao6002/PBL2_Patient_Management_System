@@ -2,70 +2,100 @@ Hệ thống Quản lý Bệnh nhân (PMS) cần có những hành vi gì?
 
 Hãy hình dung PMS giống như một phần mềm trợ lý cho bệnh viện/phòng khám. Nó phải quản lý con người (bệnh nhân, bác sĩ) và mối quan hệ giữa họ (lịch hẹn/khám).
 
-1. Quản lý Bệnh nhân
+0. Init
+- Lớp Person
+- Lớp Patient
+- Lớp PatientManager
+- Lớp Doctor
+- Lớp DoctorManager
+- Lớp Appointment
+- Lớp AppointmentManager
 
-Thêm bệnh nhân mới (Mã ID, họ tên, tuổi, giới tính, thông tin liên hệ, tiền sử bệnh…).
+1. Lớp Person
+- Thuộc tính:
+    + name , gender, birthday, ID
+- Phương thức:
+    + setter (hàm nhập):
+        + setName, setGender, setBirthday, setID
+    + getter (hàm xuất):
+        + getName, getGender, getBirthday, getID
+    * phương thức trừu tượng displayInfo
 
-Xem thông tin bệnh nhân theo ID.
+2.0 Lớp Patient
+- Thuộc tính:
+    + Kế thừa từ lớp Person;
+    + bloodType, nameMother, nameFather
+- Phương thức:
+    + setter (hàm nhập):
+        + setBloodType, setNameMother, setNameFather
+    + getter (hàm xuất):
+        + getBloodType, getNameMother, getNameFather
 
-Sửa thông tin bệnh nhân (ví dụ: đổi số điện thoại, địa chỉ).
+2.1. Lớp PatientManager 
+- Thêm bệnh nhân mới (Mã ID, họ tên, tuổi, giới tính, thông tin liên hệ, tiền sử bệnh…). 
 
-Xóa bệnh nhân (nếu không còn hoạt động).
+- Xem thông tin bệnh nhân theo ID.
 
-Liệt kê tất cả bệnh nhân.
+- Sửa thông tin bệnh nhân (ví dụ: đổi số điện thoại, địa chỉ).
 
-2. Quản lý Bác sĩ
+- Xóa bệnh nhân (nếu không còn hoạt động).
 
-Thêm bác sĩ (ID, họ tên, chuyên khoa, lịch trực/khả năng khám).
+- Liệt kê tất cả bệnh nhân.
 
-Xem thông tin bác sĩ.
+3.0 Lớp Doctor
 
-Sửa thông tin bác sĩ.
+3.1. Lớp DoctorManager
+- Thêm bác sĩ (ID, họ tên, chuyên khoa, lịch trực/khả năng khám).
 
-Xóa bác sĩ.
+- Xem thông tin bác sĩ.
 
-Liệt kê tất cả bác sĩ.
+- Sửa thông tin bác sĩ.
 
-Kiểm tra thông tin bệnh nhân được bác sĩ đảm nhận
+- Xóa bác sĩ.
 
-3. Quản lý Lịch hẹn (Appointment)
+- Liệt kê tất cả bác sĩ.
 
-Đặt lịch hẹn (gồm bệnh nhân + bác sĩ + ngày/giờ + lý do khám).
+- Kiểm tra thông tin bệnh nhân được bác sĩ đảm nhận
 
-Xem chi tiết một lịch hẹn theo ID.
+4.0 Lớp Appointment
 
-Liệt kê tất cả lịch hẹn (có thể sắp xếp theo ngày hoặc theo bệnh nhân).
+4.1. Lớp AppointmentManager
+- Đặt lịch hẹn (gồm bệnh nhân + bác sĩ + ngày/giờ + lý do khám).
 
-Tìm lịch hẹn theo bác sĩ hoặc bệnh nhân.
+- Xem chi tiết một lịch hẹn theo ID.
 
-Hủy lịch hẹn.
+- Liệt kê tất cả lịch hẹn (có thể sắp xếp theo ngày hoặc theo bệnh nhân).
 
-(Nâng cao) Kiểm tra xung đột thời gian khi đặt lịch.
+- Tìm lịch hẹn theo bác sĩ hoặc bệnh nhân.
 
-4. Tìm kiếm & Truy vấn
+- Hủy lịch hẹn.
 
-Tìm bệnh nhân theo ID hoặc tên.
+- (Nâng cao) Kiểm tra xung đột thời gian khi đặt lịch.
 
-Tìm bác sĩ theo ID hoặc chuyên khoa.
+5. Tìm kiếm & Truy vấn
 
-Tìm lịch hẹn theo ngày, bệnh nhân hoặc bác sĩ.
+- Tìm bệnh nhân theo ID hoặc tên.
 
-5. Xử lý Dữ liệu
+- Tìm bác sĩ theo ID hoặc chuyên khoa.
 
-Lưu danh sách bệnh nhân, bác sĩ, lịch hẹn ra file (patients.txt, doctors.txt, appointments.txt).
+- Tìm lịch hẹn theo ngày, bệnh nhân hoặc bác sĩ.
 
-Nạp dữ liệu từ file khi khởi động chương trình.
+6. Xử lý Dữ liệu
 
-(Nâng cao) Kết nối cơ sở dữ liệu (SQLite/MySQL).
+- Lưu danh sách bệnh nhân, bác sĩ, lịch hẹn ra file (patients.txt, doctors.txt, appointments.txt).
 
-6. Tính năng bổ sung (Nâng cao, Phase 4+)
+- Nạp dữ liệu từ file khi khởi động chương trình.
 
-Gán bác sĩ chính cho mỗi bệnh nhân.
+- (Nâng cao) Kết nối cơ sở dữ liệu (SQLite/MySQL).
 
-Lưu lịch sử khám bệnh của bệnh nhân (các lần khám, chẩn đoán).
+7. Tính năng bổ sung (Nâng cao, Phase 4+)
 
-Xuất báo cáo (ví dụ: tất cả bệnh nhân của bác sĩ X trong tuần này).
+- Gán bác sĩ chính cho mỗi bệnh nhân.
 
-Đăng nhập (quản trị viên / bác sĩ).
+- Lưu lịch sử khám bệnh của bệnh nhân (các lần khám, chẩn đoán).
 
-Nhắc nhở lịch hẹn.
+- Xuất báo cáo (ví dụ: tất cả bệnh nhân của bác sĩ X trong tuần này).
+
+- Đăng nhập (quản trị viên / bác sĩ).
+
+- Nhắc nhở lịch hẹn.
