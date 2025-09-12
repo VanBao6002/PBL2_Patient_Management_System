@@ -3,11 +3,10 @@
 
 #include "person.h"
 #include <string>
-#include <vector>
 #include <unordered_set>
 class Doctor : public Person {
     public:
-        enum status { Unavailable, Available, OnLeave };
+        enum status { Unavailable, Available, OnLeave }; //encapsulate enum inside doctor class
 
     private:
         std::string specialization; // chuyen khoa
