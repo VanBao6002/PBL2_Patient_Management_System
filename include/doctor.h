@@ -21,13 +21,15 @@ class Doctor : public Person {
         ~Doctor() = default;
 
         void displayInfo() const override;
-
+        //getters
         std::string getSpecialization() const {return specialization;}
         const std::unordered_set<int>& getPatientIDs() const {return patientIDs;}
 
+        //setters
         void setSpecialization(const std::string &specialization_);
+        void setStatus(status doctorStatus_);
+
         void addPatientID(int patientID_);
         void removePatientID(int patientID_);
-
 };        
 #endif
